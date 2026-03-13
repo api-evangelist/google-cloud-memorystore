@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/google-cloud-memorystore/refs/heads/main/json-schema/instance-schema.json",
+  "title": "Google Cloud Memorystore for Redis Instance",
+  "description": "A Memorystore for Redis instance resource representing a fully managed Redis deployment on Google Cloud.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Unique name of the resource in the format projects/{project}/locations/{location}/instances/{instance}.",
+      "pattern": "^projects/[^/]+/locations/[^/]+/instances/[^/]+$"
+    },
+    "displayName": {
+      "type": "string",
+      "description": "An arbitrary user-provided name for the instance."
+    },
+    "labels": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Resource labels."
+    },
+    "locationId": {
+      "type": "string",
+      "description": "The zone where the instance will be provisioned."
+    },
+    "alternativeLocationId": {
+      "type": "string",
+      "description": "The alternative zone for a STANDARD_HA tier instance."
+    },
+    "redisVersion": {
+      "type": "string",
+      "description": "The version of Redis software.",
+      "examples": ["REDIS_6_X", "REDIS_7_0"]
+    },
+    "reservedIpRange": {
+      "type": "string",
+      "description": "CIDR range of internal addresses reserved for this instance."
+    },
+    "host": {
+      "type": "string",
+      "description": "Hostname or IP address of the exposed Redis endpoint."
+    },
+    "port": {
+      "type": "integer",
+      "description": "The port number of the exposed Redis endpoint.",
+      "default": 6379
+    },
+    "state": {
+      "type": "string",
+      "enum": ["STATE_UNSPECIFIED", "CREATING", "READY", "UPDATING", "DELETING", "REPAIRING", "MAINTENANCE", "IMPORTING", "FAILING_OVER"],
+      "description": "The current state of the instance."
+    },
+    "memorySizeGb": {
+      "type": "integer",
+      "description": "Redis memory size in GiB.",
+      "minimum": 1
+    },
+    "authorizedNetwork": {
+      "type": "string",
+      "description": "The full name of the Google Compute Engine network to which the instance is connected."
+    },
+    "connectMode": {
+      "type": "string",
+      "enum": ["CONNECT_MODE_UNSPECIFIED", "DIRECT_PEERING", "PRIVATE_SERVICE_ACCESS"],
+      "description": "The network connect mode of the Redis instance."
+    },
+    "authEnabled": {
+      "type": "boolean",
+      "description": "Whether AUTH is enabled for the instance."
+    },
+    "tier": {
+      "type": "string",
+      "enum": ["TIER_UNSPECIFIED", "BASIC", "STANDARD_HA"],
+      "description": "The service tier of the instance."
+    },
+    "replicaCount": {
+      "type": "integer",
+      "description": "The number of replica nodes.",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "transitEncryptionMode": {
+      "type": "string",
+      "enum": ["TRANSIT_ENCRYPTION_MODE_UNSPECIFIED", "SERVER_AUTHENTICATION", "DISABLED"],
+      "description": "The TLS mode of the Redis instance."
+    },
+    "createTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The creation time of the instance."
+    },
+    "redisConfigs": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Redis configuration parameters."
+    }
+  },
+  "required": ["memorySizeGb", "tier"]
+}

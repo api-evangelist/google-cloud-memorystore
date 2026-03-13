@@ -1,0 +1,25 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "redis": "https://cloud.google.com/memorystore/docs/redis/reference/rest/v1/",
+    "gcloud": "https://cloud.google.com/apis/",
+    "Instance": "redis:projects.locations.instances",
+    "Operation": "redis:projects.locations.operations",
+    "name": "schema:name",
+    "displayName": "schema:alternateName",
+    "description": "schema:description",
+    "state": "redis:state",
+    "tier": "redis:tier",
+    "memorySizeGb": "redis:memorySizeGb",
+    "redisVersion": "redis:redisVersion",
+    "host": "schema:url",
+    "port": "redis:port",
+    "locationId": "schema:location",
+    "labels": "schema:keywords",
+    "createTime": "schema:dateCreated",
+    "authorizedNetwork": "redis:authorizedNetwork",
+    "connectMode": "redis:connectMode",
+    "replicaCount": "redis:replicaCount",
+    "project": "gcloud:project"
+  }
+}
