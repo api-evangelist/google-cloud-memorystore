@@ -20,8 +20,6 @@ servers:
 tags:
   - name: Instances
     description: Operations on Memorystore Redis instances
-  - name: Operations
-    description: Long-running operations
 paths:
   /projects/{project}/locations/{location}/instances:
     get:
