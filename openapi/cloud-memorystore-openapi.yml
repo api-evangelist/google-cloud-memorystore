@@ -27,7 +27,7 @@ paths:
     get:
       tags:
         - Instances
-      summary: List instances
+      summary: Google Cloud Memorystore List instances
       description: Lists all Redis instances owned by a project in either the specified location or all locations.
       operationId: listInstances
       parameters:
@@ -63,7 +63,7 @@ paths:
     post:
       tags:
         - Instances
-      summary: Create an instance
+      summary: Google Cloud Memorystore Create an instance
       description: Creates a Redis instance based on the specified tier and memory size.
       operationId: createInstance
       parameters:
@@ -103,7 +103,7 @@ paths:
     get:
       tags:
         - Instances
-      summary: Get an instance
+      summary: Google Cloud Memorystore Get an instance
       description: Gets the details of a specific Redis instance.
       operationId: getInstance
       parameters:
@@ -135,7 +135,7 @@ paths:
     patch:
       tags:
         - Instances
-      summary: Update an instance
+      summary: Google Cloud Memorystore Update an instance
       description: Updates the metadata and configuration of a specific Redis instance.
       operationId: updateInstance
       parameters:
@@ -179,7 +179,7 @@ paths:
     delete:
       tags:
         - Instances
-      summary: Delete an instance
+      summary: Google Cloud Memorystore Delete an instance
       description: Deletes a specific Redis instance. Instance stops serving and data is deleted.
       operationId: deleteInstance
       parameters:
@@ -212,7 +212,7 @@ paths:
     post:
       tags:
         - Instances
-      summary: Upgrade an instance
+      summary: Google Cloud Memorystore Upgrade an instance
       description: Upgrades the Redis instance to a newer Redis version.
       operationId: upgradeInstance
       parameters:
@@ -257,7 +257,7 @@ paths:
     post:
       tags:
         - Instances
-      summary: Failover an instance
+      summary: Google Cloud Memorystore Failover an instance
       description: Initiates a failover of the primary node to current replica node for a specific STANDARD tier Cloud Memorystore for Redis instance.
       operationId: failoverInstance
       parameters:
