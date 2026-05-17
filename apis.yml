@@ -43,14 +43,14 @@ apis:
         url: openapi/cloud-memorystore-openapi.yml
       - type: Authentication
         url: https://cloud.google.com/memorystore/docs/redis/auth-overview
-      - type: Getting Started
+      - type: GettingStarted
         url: https://cloud.google.com/memorystore/docs/redis/quickstart
       - type: JSONSchema
         url: json-schema/instance-schema.json
 common:
   - type: Portal
     url: https://cloud.google.com/memorystore
-  - type: Getting Started
+  - type: GettingStarted
     url: https://cloud.google.com/memorystore/docs/redis/quickstart
   - type: Documentation
     url: https://cloud.google.com/memorystore/docs/redis
@@ -58,15 +58,15 @@ common:
     url: https://cloud.google.com/memorystore/docs/redis/auth-overview
   - type: Pricing
     url: https://cloud.google.com/memorystore/docs/redis/pricing
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://cloud.google.com/terms
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://policies.google.com/privacy
-  - type: Status
+  - type: StatusPage
     url: https://status.cloud.google.com/
   - type: Support
     url: https://cloud.google.com/memorystore/docs/redis/support
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/google-cloud-memorystore-context.jsonld
   - type: Integrations
     url: https://cloud.google.com/marketplace
