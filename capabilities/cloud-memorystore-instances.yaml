@@ -1,25 +1,23 @@
 naftiko: 1.0.0-alpha2
 info:
-  label: Google Cloud Memorystore for Redis API
-  description: The Google Cloud Memorystore for Redis API provides programmatic management of fully managed Redis instances
-    on Google Cloud. It enables creating, configuring, scaling, and monitoring Redis instances for use as in-memory data stores
-    and caches, with support for high availability, automatic failover, and data persistence.
+  label: Google Cloud Memorystore for Redis API — Instances
+  description: 'Google Cloud Memorystore for Redis API — Instances. 7 operations. Lead operation: Google Cloud Memorystore
+    List instances. Self-contained Naftiko capability covering one Google Cloud Memorystore business surface.'
   tags:
-  - Google
-  - Cloud
-  - Memorystore
-  - API
-  created: '2026-05-06'
-  modified: '2026-05-06'
+  - Google Cloud Memorystore
+  - Instances
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_MEMORYSTORE_API_KEY: GOOGLE_CLOUD_MEMORYSTORE_API_KEY
 capability:
   consumes:
   - type: http
-    namespace: google-cloud-memorystore
+    namespace: cloud-memorystore-instances
     baseUri: https://redis.googleapis.com/v1
-    description: Google Cloud Memorystore for Redis API HTTP API.
-    authentication:
-      type: bearer
-      token: '{{GOOGLE_CLOUD_MEMORYSTORE_TOKEN}}'
+    description: Google Cloud Memorystore for Redis API — Instances business capability. Self-contained, no shared references.
     resources:
     - name: projects-project-locations-location-instances
       path: /projects/{project}/locations/{location}/instances
@@ -27,6 +25,11 @@ capability:
       - name: listinstances
         method: GET
         description: Google Cloud Memorystore List instances
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
         inputParameters:
         - name: project
           in: path
@@ -35,22 +38,22 @@ capability:
         - name: location
           in: path
           type: string
-          required: true
           description: Use '-' for all locations.
+          required: true
         - name: pageSize
           in: query
           type: integer
         - name: pageToken
           in: query
           type: string
+      - name: createinstance
+        method: POST
+        description: Google Cloud Memorystore Create an instance
         outputRawFormat: json
         outputParameters:
         - name: result
           type: object
           value: $.
-      - name: createinstance
-        method: POST
-        description: Google Cloud Memorystore Create an instance
         inputParameters:
         - name: project
           in: path
@@ -63,19 +66,24 @@ capability:
         - name: instanceId
           in: query
           type: string
-          required: true
           description: The logical name of the Redis instance.
-        outputRawFormat: json
-        outputParameters:
-        - name: result
+          required: true
+        - name: body
+          in: body
           type: object
-          value: $.
-    - name: projects-project-locations-location-instances-in
+          description: Request body (JSON).
+          required: true
+    - name: projects-project-locations-location-instances-instance
       path: /projects/{project}/locations/{location}/instances/{instance}
       operations:
       - name: getinstance
         method: GET
         description: Google Cloud Memorystore Get an instance
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
         inputParameters:
         - name: project
           in: path
@@ -89,14 +97,14 @@ capability:
           in: path
           type: string
           required: true
+      - name: updateinstance
+        method: PATCH
+        description: Google Cloud Memorystore Update an instance
         outputRawFormat: json
         outputParameters:
         - name: result
           type: object
           value: $.
-      - name: updateinstance
-        method: PATCH
-        description: Google Cloud Memorystore Update an instance
         inputParameters:
         - name: project
           in: path
@@ -113,16 +121,21 @@ capability:
         - name: updateMask
           in: query
           type: string
-          required: true
           description: Fields to update.
-        outputRawFormat: json
-        outputParameters:
-        - name: result
+          required: true
+        - name: body
+          in: body
           type: object
-          value: $.
+          description: Request body (JSON).
+          required: true
       - name: deleteinstance
         method: DELETE
         description: Google Cloud Memorystore Delete an instance
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
         inputParameters:
         - name: project
           in: path
@@ -136,41 +149,17 @@ capability:
           in: path
           type: string
           required: true
-        outputRawFormat: json
-        outputParameters:
-        - name: result
-          type: object
-          value: $.
-    - name: projects-project-locations-location-instances-in
-      path: /projects/{project}/locations/{location}/instances/{instance}:upgrade
-      operations:
-      - name: upgradeinstance
-        method: POST
-        description: Google Cloud Memorystore Upgrade an instance
-        inputParameters:
-        - name: project
-          in: path
-          type: string
-          required: true
-        - name: location
-          in: path
-          type: string
-          required: true
-        - name: instance
-          in: path
-          type: string
-          required: true
-        outputRawFormat: json
-        outputParameters:
-        - name: result
-          type: object
-          value: $.
-    - name: projects-project-locations-location-instances-in
+    - name: projects-project-locations-location-instances-instance}:failover
       path: /projects/{project}/locations/{location}/instances/{instance}:failover
       operations:
       - name: failoverinstance
         method: POST
         description: Google Cloud Memorystore Failover an instance
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
         inputParameters:
         - name: project
           in: path
@@ -184,50 +173,86 @@ capability:
           in: path
           type: string
           required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: projects-project-locations-location-instances-instance}:upgrade
+      path: /projects/{project}/locations/{location}/instances/{instance}:upgrade
+      operations:
+      - name: upgradeinstance
+        method: POST
+        description: Google Cloud Memorystore Upgrade an instance
         outputRawFormat: json
         outputParameters:
         - name: result
           type: object
           value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: instance
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_CLOUD_MEMORYSTORE_API_KEY}}'
   exposes:
   - type: rest
+    namespace: cloud-memorystore-instances-rest
     port: 8080
-    namespace: google-cloud-memorystore-rest
-    description: REST adapter for Google Cloud Memorystore for Redis API.
+    description: REST adapter for Google Cloud Memorystore for Redis API — Instances. One Spectral-compliant resource per
+      consumed operation, prefixed with /v1.
     resources:
-    - path: /projects/{project}/locations/{location}/instances
-      name: listinstances
+    - path: /v1/projects/{project}/locations/{location}/instances
+      name: projects-project-locations-location-instances
+      description: REST surface for projects-project-locations-location-instances.
       operations:
       - method: GET
         name: listinstances
         description: Google Cloud Memorystore List instances
-        call: google-cloud-memorystore.listinstances
+        call: cloud-memorystore-instances.listinstances
         with:
           project: rest.project
           location: rest.location
+          pageSize: rest.pageSize
+          pageToken: rest.pageToken
         outputParameters:
         - type: object
           mapping: $.
-    - path: /projects/{project}/locations/{location}/instances
-      name: createinstance
-      operations:
       - method: POST
         name: createinstance
         description: Google Cloud Memorystore Create an instance
-        call: google-cloud-memorystore.createinstance
+        call: cloud-memorystore-instances.createinstance
         with:
           project: rest.project
           location: rest.location
+          instanceId: rest.instanceId
+          body: rest.body
         outputParameters:
         - type: object
           mapping: $.
-    - path: /projects/{project}/locations/{location}/instances/{instance}
-      name: getinstance
+    - path: /v1/projects/{project}/locations/{location}/instances/{instance}
+      name: projects-project-locations-location-instances-instance
+      description: REST surface for projects-project-locations-location-instances-instance.
       operations:
       - method: GET
         name: getinstance
         description: Google Cloud Memorystore Get an instance
-        call: google-cloud-memorystore.getinstance
+        call: cloud-memorystore-instances.getinstance
         with:
           project: rest.project
           location: rest.location
@@ -235,27 +260,23 @@ capability:
         outputParameters:
         - type: object
           mapping: $.
-    - path: /projects/{project}/locations/{location}/instances/{instance}
-      name: updateinstance
-      operations:
       - method: PATCH
         name: updateinstance
         description: Google Cloud Memorystore Update an instance
-        call: google-cloud-memorystore.updateinstance
+        call: cloud-memorystore-instances.updateinstance
         with:
           project: rest.project
           location: rest.location
           instance: rest.instance
+          updateMask: rest.updateMask
+          body: rest.body
         outputParameters:
         - type: object
           mapping: $.
-    - path: /projects/{project}/locations/{location}/instances/{instance}
-      name: deleteinstance
-      operations:
       - method: DELETE
         name: deleteinstance
         description: Google Cloud Memorystore Delete an instance
-        call: google-cloud-memorystore.deleteinstance
+        call: cloud-memorystore-instances.deleteinstance
         with:
           project: rest.project
           location: rest.location
@@ -263,238 +284,146 @@ capability:
         outputParameters:
         - type: object
           mapping: $.
-    - path: /projects/{project}/locations/{location}/instances/{instance}:upgrade
-      name: upgradeinstance
-      operations:
-      - method: POST
-        name: upgradeinstance
-        description: Google Cloud Memorystore Upgrade an instance
-        call: google-cloud-memorystore.upgradeinstance
-        with:
-          project: rest.project
-          location: rest.location
-          instance: rest.instance
-        outputParameters:
-        - type: object
-          mapping: $.
-    - path: /projects/{project}/locations/{location}/instances/{instance}:failover
-      name: failoverinstance
+    - path: /v1/projects/{project}/locations/{location}/instances/instance-failover
+      name: projects-project-locations-location-instances-instance-failover
+      description: REST surface for projects-project-locations-location-instances-instance}:failover.
       operations:
       - method: POST
         name: failoverinstance
         description: Google Cloud Memorystore Failover an instance
-        call: google-cloud-memorystore.failoverinstance
+        call: cloud-memorystore-instances.failoverinstance
         with:
           project: rest.project
           location: rest.location
           instance: rest.instance
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects/{project}/locations/{location}/instances/instance-upgrade
+      name: projects-project-locations-location-instances-instance-upgrade
+      description: REST surface for projects-project-locations-location-instances-instance}:upgrade.
+      operations:
+      - method: POST
+        name: upgradeinstance
+        description: Google Cloud Memorystore Upgrade an instance
+        call: cloud-memorystore-instances.upgradeinstance
+        with:
+          project: rest.project
+          location: rest.location
+          instance: rest.instance
+          body: rest.body
         outputParameters:
         - type: object
           mapping: $.
   - type: mcp
+    namespace: cloud-memorystore-instances-mcp
     port: 9090
-    namespace: google-cloud-memorystore-mcp
     transport: http
-    description: MCP adapter for Google Cloud Memorystore for Redis API for AI agent use.
+    description: MCP adapter for Google Cloud Memorystore for Redis API — Instances. One tool per consumed operation, routed
+      inline through this capability's consumes block.
     tools:
-    - name: listinstances
+    - name: google-cloud-memorystore-list-instances
       description: Google Cloud Memorystore List instances
       hints:
         readOnly: true
         destructive: false
         idempotent: true
-      call: google-cloud-memorystore.listinstances
+      call: cloud-memorystore-instances.listinstances
       with:
         project: tools.project
         location: tools.location
         pageSize: tools.pageSize
         pageToken: tools.pageToken
-      inputParameters:
-      - name: project
-        type: string
-        description: project
-        required: true
-      - name: location
-        type: string
-        description: Use '-' for all locations.
-        required: true
-      - name: pageSize
-        type: integer
-        description: pageSize
-      - name: pageToken
-        type: string
-        description: pageToken
       outputParameters:
       - type: object
         mapping: $.
-    - name: createinstance
+    - name: google-cloud-memorystore-create-instance
       description: Google Cloud Memorystore Create an instance
       hints:
         readOnly: false
         destructive: false
         idempotent: false
-      call: google-cloud-memorystore.createinstance
+      call: cloud-memorystore-instances.createinstance
       with:
         project: tools.project
         location: tools.location
         instanceId: tools.instanceId
-      inputParameters:
-      - name: project
-        type: string
-        description: project
-        required: true
-      - name: location
-        type: string
-        description: location
-        required: true
-      - name: instanceId
-        type: string
-        description: The logical name of the Redis instance.
-        required: true
+        body: tools.body
       outputParameters:
       - type: object
         mapping: $.
-    - name: getinstance
+    - name: google-cloud-memorystore-get-instance
       description: Google Cloud Memorystore Get an instance
       hints:
         readOnly: true
         destructive: false
         idempotent: true
-      call: google-cloud-memorystore.getinstance
+      call: cloud-memorystore-instances.getinstance
       with:
         project: tools.project
         location: tools.location
         instance: tools.instance
-      inputParameters:
-      - name: project
-        type: string
-        description: project
-        required: true
-      - name: location
-        type: string
-        description: location
-        required: true
-      - name: instance
-        type: string
-        description: instance
-        required: true
       outputParameters:
       - type: object
         mapping: $.
-    - name: updateinstance
+    - name: google-cloud-memorystore-update-instance
       description: Google Cloud Memorystore Update an instance
       hints:
         readOnly: false
         destructive: false
-        idempotent: false
-      call: google-cloud-memorystore.updateinstance
+        idempotent: true
+      call: cloud-memorystore-instances.updateinstance
       with:
         project: tools.project
         location: tools.location
         instance: tools.instance
         updateMask: tools.updateMask
-      inputParameters:
-      - name: project
-        type: string
-        description: project
-        required: true
-      - name: location
-        type: string
-        description: location
-        required: true
-      - name: instance
-        type: string
-        description: instance
-        required: true
-      - name: updateMask
-        type: string
-        description: Fields to update.
-        required: true
+        body: tools.body
       outputParameters:
       - type: object
         mapping: $.
-    - name: deleteinstance
+    - name: google-cloud-memorystore-delete-instance
       description: Google Cloud Memorystore Delete an instance
       hints:
         readOnly: false
         destructive: true
         idempotent: true
-      call: google-cloud-memorystore.deleteinstance
+      call: cloud-memorystore-instances.deleteinstance
       with:
         project: tools.project
         location: tools.location
         instance: tools.instance
-      inputParameters:
-      - name: project
-        type: string
-        description: project
-        required: true
-      - name: location
-        type: string
-        description: location
-        required: true
-      - name: instance
-        type: string
-        description: instance
-        required: true
       outputParameters:
       - type: object
         mapping: $.
-    - name: upgradeinstance
-      description: Google Cloud Memorystore Upgrade an instance
-      hints:
-        readOnly: false
-        destructive: false
-        idempotent: false
-      call: google-cloud-memorystore.upgradeinstance
-      with:
-        project: tools.project
-        location: tools.location
-        instance: tools.instance
-      inputParameters:
-      - name: project
-        type: string
-        description: project
-        required: true
-      - name: location
-        type: string
-        description: location
-        required: true
-      - name: instance
-        type: string
-        description: instance
-        required: true
-      outputParameters:
-      - type: object
-        mapping: $.
-    - name: failoverinstance
+    - name: google-cloud-memorystore-failover-instance
       description: Google Cloud Memorystore Failover an instance
       hints:
         readOnly: false
         destructive: false
         idempotent: false
-      call: google-cloud-memorystore.failoverinstance
+      call: cloud-memorystore-instances.failoverinstance
       with:
         project: tools.project
         location: tools.location
         instance: tools.instance
-      inputParameters:
-      - name: project
-        type: string
-        description: project
-        required: true
-      - name: location
-        type: string
-        description: location
-        required: true
-      - name: instance
-        type: string
-        description: instance
-        required: true
+        body: tools.body
       outputParameters:
       - type: object
         mapping: $.
-binds:
-- namespace: env
-  keys:
-    GOOGLE_CLOUD_MEMORYSTORE_TOKEN: GOOGLE_CLOUD_MEMORYSTORE_TOKEN
+    - name: google-cloud-memorystore-upgrade-instance
+      description: Google Cloud Memorystore Upgrade an instance
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: cloud-memorystore-instances.upgradeinstance
+      with:
+        project: tools.project
+        location: tools.location
+        instance: tools.instance
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
