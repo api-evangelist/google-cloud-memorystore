@@ -1,0 +1,313 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Memorystore for Redis API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Instances",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Memorystore List instances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://redis.googleapis.com/v1/projects/:project/locations/:location/instances",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path",
+                "description": "Use '-' for all locations."
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Lists all Redis instances owned by a project in either the specified location or all locations."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Memorystore Create an instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://redis.googleapis.com/v1/projects/:project/locations/:location/instances",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "instanceId",
+                "value": "",
+                "type": "query",
+                "description": "The logical name of the Redis instance."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Creates a Redis instance based on the specified tier and memory size."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Memorystore Get an instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://redis.googleapis.com/v1/projects/:project/locations/:location/instances/:instance",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "instance",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Gets the details of a specific Redis instance."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Memorystore Update an instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://redis.googleapis.com/v1/projects/:project/locations/:location/instances/:instance",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "instance",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "updateMask",
+                "value": "",
+                "type": "query",
+                "description": "Fields to update."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Updates the metadata and configuration of a specific Redis instance."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Memorystore Delete an instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://redis.googleapis.com/v1/projects/:project/locations/:location/instances/:instance",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "instance",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Deletes a specific Redis instance. Instance stops serving and data is deleted."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Memorystore Upgrade an instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://redis.googleapis.com/v1/projects/:project/locations/:location/instances/:instance:upgrade",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "instance",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Upgrades the Redis instance to a newer Redis version."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Memorystore Failover an instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://redis.googleapis.com/v1/projects/:project/locations/:location/instances/:instance:failover",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "instance",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+              "accessTokenUrl": "https://oauth2.googleapis.com/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Initiates a failover of the primary node to current replica node for a specific STANDARD tier Cloud Memorystore for Redis instance."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

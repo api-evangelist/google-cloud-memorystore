@@ -1,0 +1,1174 @@
+{
+  "item": [
+    {
+      "id": "d66a8ea2-06b0-4df5-8dc6-dd3c1cba520d",
+      "name": "Instances",
+      "description": {
+        "content": "Operations on Memorystore Redis instances",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bc027863-1860-48a3-adca-007677ab2a43",
+          "name": "Google Cloud Memorystore List instances",
+          "request": {
+            "name": "Google Cloud Memorystore List instances",
+            "description": {
+              "content": "Lists all Redis instances owned by a project in either the specified location or all locations.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "locations",
+                ":location",
+                "instances"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) Use '-' for all locations."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "625141fe-c06b-4502-8ac2-3614d4a9e6bc",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "locations",
+                    ":location",
+                    "instances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) Use '-' for all locations."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"instances\": [\n    {\n      \"name\": \"string\",\n      \"displayName\": \"string\",\n      \"labels\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"locationId\": \"string\",\n      \"alternativeLocationId\": \"string\",\n      \"redisVersion\": \"string\",\n      \"reservedIpRange\": \"string\",\n      \"host\": \"string\",\n      \"port\": 2390,\n      \"currentLocationId\": \"string\",\n      \"createTime\": \"1951-05-03T02:55:49.392Z\",\n      \"state\": \"DELETING\",\n      \"statusMessage\": \"string\",\n      \"memorySizeGb\": 5328,\n      \"authorizedNetwork\": \"string\",\n      \"persistenceIamIdentity\": \"string\",\n      \"connectMode\": \"CONNECT_MODE_UNSPECIFIED\",\n      \"authEnabled\": false,\n      \"tier\": \"STANDARD_HA\",\n      \"replicaCount\": 3648,\n      \"readReplicasMode\": \"READ_REPLICAS_ENABLED\",\n      \"transitEncryptionMode\": \"SERVER_AUTHENTICATION\"\n    },\n    {\n      \"name\": \"string\",\n      \"displayName\": \"string\",\n      \"labels\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\",\n        \"key_3\": \"string\",\n        \"key_4\": \"string\"\n      },\n      \"locationId\": \"string\",\n      \"alternativeLocationId\": \"string\",\n      \"redisVersion\": \"string\",\n      \"reservedIpRange\": \"string\",\n      \"host\": \"string\",\n      \"port\": 3601,\n      \"currentLocationId\": \"string\",\n      \"createTime\": \"1980-05-07T04:21:05.989Z\",\n      \"state\": \"DELETING\",\n      \"statusMessage\": \"string\",\n      \"memorySizeGb\": 493,\n      \"authorizedNetwork\": \"string\",\n      \"persistenceIamIdentity\": \"string\",\n      \"connectMode\": \"CONNECT_MODE_UNSPECIFIED\",\n      \"authEnabled\": false,\n      \"tier\": \"TIER_UNSPECIFIED\",\n      \"replicaCount\": 8155,\n      \"readReplicasMode\": \"READ_REPLICAS_MODE_UNSPECIFIED\",\n      \"transitEncryptionMode\": \"SERVER_AUTHENTICATION\"\n    }\n  ],\n  \"nextPageToken\": \"string\",\n  \"unreachable\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "20667a79-0fed-464d-91b2-41b603d50214",
+          "name": "Google Cloud Memorystore Create an instance",
+          "request": {
+            "name": "Google Cloud Memorystore Create an instance",
+            "description": {
+              "content": "Creates a Redis instance based on the specified tier and memory size.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "locations",
+                ":location",
+                "instances"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "instanceId",
+                  "value": "<string>",
+                  "description": "(Required) The logical name of the Redis instance."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\"\n  },\n  \"locationId\": \"<string>\",\n  \"alternativeLocationId\": \"<string>\",\n  \"redisVersion\": \"<string>\",\n  \"reservedIpRange\": \"<string>\",\n  \"host\": \"<string>\",\n  \"port\": \"<integer>\",\n  \"currentLocationId\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"state\": \"<string>\",\n  \"statusMessage\": \"<string>\",\n  \"memorySizeGb\": \"<integer>\",\n  \"authorizedNetwork\": \"<string>\",\n  \"persistenceIamIdentity\": \"<string>\",\n  \"connectMode\": \"<string>\",\n  \"authEnabled\": \"<boolean>\",\n  \"tier\": \"<string>\",\n  \"replicaCount\": \"<integer>\",\n  \"readReplicasMode\": \"<string>\",\n  \"transitEncryptionMode\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a223c539-cb3b-47ce-b3e0-3b75f99f01d3",
+              "name": "Instance creation initiated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "locations",
+                    ":location",
+                    "instances"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "instanceId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"locationId\": \"<string>\",\n  \"alternativeLocationId\": \"<string>\",\n  \"redisVersion\": \"<string>\",\n  \"reservedIpRange\": \"<string>\",\n  \"host\": \"<string>\",\n  \"port\": \"<integer>\",\n  \"currentLocationId\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"state\": \"<string>\",\n  \"statusMessage\": \"<string>\",\n  \"memorySizeGb\": \"<integer>\",\n  \"authorizedNetwork\": \"<string>\",\n  \"persistenceIamIdentity\": \"<string>\",\n  \"connectMode\": \"<string>\",\n  \"authEnabled\": \"<boolean>\",\n  \"tier\": \"<string>\",\n  \"replicaCount\": \"<integer>\",\n  \"readReplicasMode\": \"<string>\",\n  \"transitEncryptionMode\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"done\": true,\n  \"metadata\": {},\n  \"error\": {\n    \"code\": 9813,\n    \"message\": \"string\"\n  },\n  \"response\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fbf9221a-eba4-4d5f-b5a5-ca22ccab8498",
+          "name": "Google Cloud Memorystore Get an instance",
+          "request": {
+            "name": "Google Cloud Memorystore Get an instance",
+            "description": {
+              "content": "Gets the details of a specific Redis instance.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "locations",
+                ":location",
+                "instances",
+                ":instance"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "instance",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "50ede124-2f9f-4dbd-846c-e9cc31b30533",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "locations",
+                    ":location",
+                    "instances",
+                    ":instance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instance",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"displayName\": \"string\",\n  \"labels\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\",\n    \"key_3\": \"string\"\n  },\n  \"locationId\": \"string\",\n  \"alternativeLocationId\": \"string\",\n  \"redisVersion\": \"string\",\n  \"reservedIpRange\": \"string\",\n  \"host\": \"string\",\n  \"port\": 9298,\n  \"currentLocationId\": \"string\",\n  \"createTime\": \"2004-09-15T10:26:00.947Z\",\n  \"state\": \"STATE_UNSPECIFIED\",\n  \"statusMessage\": \"string\",\n  \"memorySizeGb\": 2437,\n  \"authorizedNetwork\": \"string\",\n  \"persistenceIamIdentity\": \"string\",\n  \"connectMode\": \"PRIVATE_SERVICE_ACCESS\",\n  \"authEnabled\": false,\n  \"tier\": \"BASIC\",\n  \"replicaCount\": 5396,\n  \"readReplicasMode\": \"READ_REPLICAS_DISABLED\",\n  \"transitEncryptionMode\": \"DISABLED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4bc707cd-5002-4a49-96d8-3633895a0735",
+          "name": "Google Cloud Memorystore Update an instance",
+          "request": {
+            "name": "Google Cloud Memorystore Update an instance",
+            "description": {
+              "content": "Updates the metadata and configuration of a specific Redis instance.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "locations",
+                ":location",
+                "instances",
+                ":instance"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "updateMask",
+                  "value": "<string>",
+                  "description": "(Required) Fields to update."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "instance",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\"\n  },\n  \"locationId\": \"<string>\",\n  \"alternativeLocationId\": \"<string>\",\n  \"redisVersion\": \"<string>\",\n  \"reservedIpRange\": \"<string>\",\n  \"host\": \"<string>\",\n  \"port\": \"<integer>\",\n  \"currentLocationId\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"state\": \"<string>\",\n  \"statusMessage\": \"<string>\",\n  \"memorySizeGb\": \"<integer>\",\n  \"authorizedNetwork\": \"<string>\",\n  \"persistenceIamIdentity\": \"<string>\",\n  \"connectMode\": \"<string>\",\n  \"authEnabled\": \"<boolean>\",\n  \"tier\": \"<string>\",\n  \"replicaCount\": \"<integer>\",\n  \"readReplicasMode\": \"<string>\",\n  \"transitEncryptionMode\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "00ebb8f2-d515-4dd4-8920-215bfe4fb618",
+              "name": "Instance update initiated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "locations",
+                    ":location",
+                    "instances",
+                    ":instance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "updateMask",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instance",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"locationId\": \"<string>\",\n  \"alternativeLocationId\": \"<string>\",\n  \"redisVersion\": \"<string>\",\n  \"reservedIpRange\": \"<string>\",\n  \"host\": \"<string>\",\n  \"port\": \"<integer>\",\n  \"currentLocationId\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"state\": \"<string>\",\n  \"statusMessage\": \"<string>\",\n  \"memorySizeGb\": \"<integer>\",\n  \"authorizedNetwork\": \"<string>\",\n  \"persistenceIamIdentity\": \"<string>\",\n  \"connectMode\": \"<string>\",\n  \"authEnabled\": \"<boolean>\",\n  \"tier\": \"<string>\",\n  \"replicaCount\": \"<integer>\",\n  \"readReplicasMode\": \"<string>\",\n  \"transitEncryptionMode\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"done\": true,\n  \"metadata\": {},\n  \"error\": {\n    \"code\": 9813,\n    \"message\": \"string\"\n  },\n  \"response\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c0332ae1-cdca-44a4-abba-66e43a6699b7",
+          "name": "Google Cloud Memorystore Delete an instance",
+          "request": {
+            "name": "Google Cloud Memorystore Delete an instance",
+            "description": {
+              "content": "Deletes a specific Redis instance. Instance stops serving and data is deleted.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "locations",
+                ":location",
+                "instances",
+                ":instance"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "instance",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "39b84d4a-d9b3-4c1c-ba90-c2a89bb68bf7",
+              "name": "Instance deletion initiated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "locations",
+                    ":location",
+                    "instances",
+                    ":instance"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "instance",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"done\": true,\n  \"metadata\": {},\n  \"error\": {\n    \"code\": 9813,\n    \"message\": \"string\"\n  },\n  \"response\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8d6078d2-cd75-459f-894b-3720141c53da",
+          "name": "Google Cloud Memorystore Upgrade an instance",
+          "request": {
+            "name": "Google Cloud Memorystore Upgrade an instance",
+            "description": {
+              "content": "Upgrades the Redis instance to a newer Redis version.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "locations",
+                ":location",
+                "instances",
+                "{{instance}}:upgrade"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"redisVersion\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "23412669-3455-48b6-8c95-197b649edd2a",
+              "name": "Instance upgrade initiated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "locations",
+                    ":location",
+                    "instances",
+                    "{{instance}}:upgrade"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"redisVersion\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"done\": true,\n  \"metadata\": {},\n  \"error\": {\n    \"code\": 9813,\n    \"message\": \"string\"\n  },\n  \"response\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "80ddc248-9008-4749-96ca-5145b1adf57f",
+          "name": "Google Cloud Memorystore Failover an instance",
+          "request": {
+            "name": "Google Cloud Memorystore Failover an instance",
+            "description": {
+              "content": "Initiates a failover of the primary node to current replica node for a specific STANDARD tier Cloud Memorystore for Redis instance.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "locations",
+                ":location",
+                "instances",
+                "{{instance}}:failover"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "https://www.googleapis.com/auth/cloud-platform"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://oauth2.googleapis.com/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://accounts.google.com/o/oauth2/auth"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"dataProtectionMode\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "27f859f9-a7ed-44e3-8420-cd3308b8f852",
+              "name": "Failover initiated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "locations",
+                    ":location",
+                    "instances",
+                    "{{instance}}:failover"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dataProtectionMode\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"done\": true,\n  \"metadata\": {},\n  \"error\": {\n    \"code\": 9813,\n    \"message\": \"string\"\n  },\n  \"response\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://redis.googleapis.com/v1",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "instance"
+    }
+  ],
+  "info": {
+    "_postman_id": "067fb3db-d06c-4d81-80c2-4b4ac6779c0c",
+    "name": "Google Cloud Memorystore for Redis API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Google Cloud Memorystore for Redis API provides programmatic management of fully managed Redis instances on Google Cloud. It enables creating, configuring, scaling, and monitoring Redis instances for use as in-memory data stores and caches, with support for high availability, automatic failover, and data persistence.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}
