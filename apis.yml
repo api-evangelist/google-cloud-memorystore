@@ -5,7 +5,7 @@ description: >-
   scalable, secure, and highly available caching layer that helps accelerate application performance. Memorystore
   automates complex tasks like provisioning, replication, failover, and patching, enabling developers to focus on
   building applications without managing infrastructure.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-memorystore/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -24,7 +24,7 @@ apis:
       supports creating, updating, deleting, and scaling Redis instances, configuring high availability with automatic
       failover, managing data persistence, and performing version upgrades. The API provides operations for both basic
       single-node and standard high-availability configurations.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://cloud.google.com/memorystore/docs/redis
     baseURL: https://redis.googleapis.com/v1
     tags:
