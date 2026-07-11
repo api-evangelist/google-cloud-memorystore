@@ -44,6 +44,12 @@ apis:
       - type: JSONSchema
         url: json-schema/instance-schema.json
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-cloud-memorystore-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-cloud-memorystore-domain-security.yml
+  - type: Authentication
+    url: authentication/google-cloud-memorystore-authentication.yml
   - type: OAuthScopes
     url: scopes/google-cloud-memorystore-scopes.yml
   - type: GitHubOrganization
