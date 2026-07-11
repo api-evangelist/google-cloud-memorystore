@@ -44,6 +44,8 @@ apis:
       - type: JSONSchema
         url: json-schema/instance-schema.json
 common:
+  - type: OAuthScopes
+    url: scopes/google-cloud-memorystore-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/GoogleCloudPlatform
   - type: Portal
