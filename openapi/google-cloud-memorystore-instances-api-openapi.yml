@@ -1,12 +1,7 @@
 openapi: 3.1.0
 info:
-  title: Google Cloud Memorystore for Redis API
-  description: >-
-    The Google Cloud Memorystore for Redis API provides programmatic management
-    of fully managed Redis instances on Google Cloud. It enables creating,
-    configuring, scaling, and monitoring Redis instances for use as in-memory
-    data stores and caches, with support for high availability, automatic
-    failover, and data persistence.
+  title: Google Cloud Memorystore for Redis Instances API
+  description: The Google Cloud Memorystore for Redis API provides programmatic management of fully managed Redis instances on Google Cloud. It enables creating, configuring, scaling, and monitoring Redis instances for use as in-memory data stores and caches, with support for high availability, automatic failover, and data persistence.
   version: v1
   contact:
     name: Google Cloud
@@ -15,39 +10,39 @@ info:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0
 servers:
-  - url: https://redis.googleapis.com/v1
-    description: Memorystore for Redis API v1
+- url: https://redis.googleapis.com/v1
+  description: Memorystore for Redis API v1
 tags:
-  - name: Instances
-    description: Operations on Memorystore Redis instances
+- name: Instances
+  description: Operations on Memorystore Redis instances
 paths:
   /projects/{project}/locations/{location}/instances:
     get:
       tags:
-        - Instances
+      - Instances
       summary: Google Cloud Memorystore List instances
       description: Lists all Redis instances owned by a project in either the specified location or all locations.
       operationId: listInstances
       parameters:
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: location
-          in: path
-          required: true
-          description: Use '-' for all locations.
-          schema:
-            type: string
-        - name: pageSize
-          in: query
-          schema:
-            type: integer
-        - name: pageToken
-          in: query
-          schema:
-            type: string
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        description: Use '-' for all locations.
+        schema:
+          type: string
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+      - name: pageToken
+        in: query
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response
@@ -56,31 +51,31 @@ paths:
               schema:
                 $ref: '#/components/schemas/ListInstancesResponse'
       security:
-        - oauth2:
-            - https://www.googleapis.com/auth/cloud-platform
+      - oauth2:
+        - https://www.googleapis.com/auth/cloud-platform
     post:
       tags:
-        - Instances
+      - Instances
       summary: Google Cloud Memorystore Create an instance
       description: Creates a Redis instance based on the specified tier and memory size.
       operationId: createInstance
       parameters:
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: location
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: instanceId
-          in: query
-          required: true
-          description: The logical name of the Redis instance.
-          schema:
-            type: string
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: instanceId
+        in: query
+        required: true
+        description: The logical name of the Redis instance.
+        schema:
+          type: string
       requestBody:
         required: true
         content:
@@ -95,31 +90,31 @@ paths:
               schema:
                 $ref: '#/components/schemas/Operation'
       security:
-        - oauth2:
-            - https://www.googleapis.com/auth/cloud-platform
+      - oauth2:
+        - https://www.googleapis.com/auth/cloud-platform
   /projects/{project}/locations/{location}/instances/{instance}:
     get:
       tags:
-        - Instances
+      - Instances
       summary: Google Cloud Memorystore Get an instance
       description: Gets the details of a specific Redis instance.
       operationId: getInstance
       parameters:
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: location
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: instance
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: instance
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response
@@ -128,36 +123,36 @@ paths:
               schema:
                 $ref: '#/components/schemas/Instance'
       security:
-        - oauth2:
-            - https://www.googleapis.com/auth/cloud-platform
+      - oauth2:
+        - https://www.googleapis.com/auth/cloud-platform
     patch:
       tags:
-        - Instances
+      - Instances
       summary: Google Cloud Memorystore Update an instance
       description: Updates the metadata and configuration of a specific Redis instance.
       operationId: updateInstance
       parameters:
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: location
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: instance
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: updateMask
-          in: query
-          required: true
-          description: Fields to update.
-          schema:
-            type: string
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: instance
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: updateMask
+        in: query
+        required: true
+        description: Fields to update.
+        schema:
+          type: string
       requestBody:
         required: true
         content:
@@ -172,30 +167,30 @@ paths:
               schema:
                 $ref: '#/components/schemas/Operation'
       security:
-        - oauth2:
-            - https://www.googleapis.com/auth/cloud-platform
+      - oauth2:
+        - https://www.googleapis.com/auth/cloud-platform
     delete:
       tags:
-        - Instances
+      - Instances
       summary: Google Cloud Memorystore Delete an instance
       description: Deletes a specific Redis instance. Instance stops serving and data is deleted.
       operationId: deleteInstance
       parameters:
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: location
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: instance
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: instance
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Instance deletion initiated
@@ -204,31 +199,31 @@ paths:
               schema:
                 $ref: '#/components/schemas/Operation'
       security:
-        - oauth2:
-            - https://www.googleapis.com/auth/cloud-platform
+      - oauth2:
+        - https://www.googleapis.com/auth/cloud-platform
   /projects/{project}/locations/{location}/instances/{instance}:upgrade:
     post:
       tags:
-        - Instances
+      - Instances
       summary: Google Cloud Memorystore Upgrade an instance
       description: Upgrades the Redis instance to a newer Redis version.
       operationId: upgradeInstance
       parameters:
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: location
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: instance
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: instance
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         required: true
         content:
@@ -240,7 +235,7 @@ paths:
                   type: string
                   description: Target Redis version (e.g., REDIS_7_0).
               required:
-                - redisVersion
+              - redisVersion
       responses:
         '200':
           description: Instance upgrade initiated
@@ -249,31 +244,31 @@ paths:
               schema:
                 $ref: '#/components/schemas/Operation'
       security:
-        - oauth2:
-            - https://www.googleapis.com/auth/cloud-platform
+      - oauth2:
+        - https://www.googleapis.com/auth/cloud-platform
   /projects/{project}/locations/{location}/instances/{instance}:failover:
     post:
       tags:
-        - Instances
+      - Instances
       summary: Google Cloud Memorystore Failover an instance
       description: Initiates a failover of the primary node to current replica node for a specific STANDARD tier Cloud Memorystore for Redis instance.
       operationId: failoverInstance
       parameters:
-        - name: project
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: location
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: instance
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: instance
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         required: true
         content:
@@ -284,9 +279,9 @@ paths:
                 dataProtectionMode:
                   type: string
                   enum:
-                    - DATA_PROTECTION_MODE_UNSPECIFIED
-                    - LIMITED_DATA_LOSS
-                    - FORCE_DATA_LOSS
+                  - DATA_PROTECTION_MODE_UNSPECIFIED
+                  - LIMITED_DATA_LOSS
+                  - FORCE_DATA_LOSS
       responses:
         '200':
           description: Failover initiated
@@ -295,19 +290,28 @@ paths:
               schema:
                 $ref: '#/components/schemas/Operation'
       security:
-        - oauth2:
-            - https://www.googleapis.com/auth/cloud-platform
+      - oauth2:
+        - https://www.googleapis.com/auth/cloud-platform
 components:
-  securitySchemes:
-    oauth2:
-      type: oauth2
-      flows:
-        authorizationCode:
-          authorizationUrl: https://accounts.google.com/o/oauth2/auth
-          tokenUrl: https://oauth2.googleapis.com/token
-          scopes:
-            https://www.googleapis.com/auth/cloud-platform: Full access to Cloud Platform
   schemas:
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        done:
+          type: boolean
+        metadata:
+          type: object
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+        response:
+          type: object
     Instance:
       type: object
       properties:
@@ -347,15 +351,15 @@ components:
         state:
           type: string
           enum:
-            - STATE_UNSPECIFIED
-            - CREATING
-            - READY
-            - UPDATING
-            - DELETING
-            - REPAIRING
-            - MAINTENANCE
-            - IMPORTING
-            - FAILING_OVER
+          - STATE_UNSPECIFIED
+          - CREATING
+          - READY
+          - UPDATING
+          - DELETING
+          - REPAIRING
+          - MAINTENANCE
+          - IMPORTING
+          - FAILING_OVER
         statusMessage:
           type: string
         memorySizeGb:
@@ -369,32 +373,32 @@ components:
         connectMode:
           type: string
           enum:
-            - CONNECT_MODE_UNSPECIFIED
-            - DIRECT_PEERING
-            - PRIVATE_SERVICE_ACCESS
+          - CONNECT_MODE_UNSPECIFIED
+          - DIRECT_PEERING
+          - PRIVATE_SERVICE_ACCESS
         authEnabled:
           type: boolean
         tier:
           type: string
           enum:
-            - TIER_UNSPECIFIED
-            - BASIC
-            - STANDARD_HA
+          - TIER_UNSPECIFIED
+          - BASIC
+          - STANDARD_HA
           description: The service tier of the instance.
         replicaCount:
           type: integer
         readReplicasMode:
           type: string
           enum:
-            - READ_REPLICAS_MODE_UNSPECIFIED
-            - READ_REPLICAS_DISABLED
-            - READ_REPLICAS_ENABLED
+          - READ_REPLICAS_MODE_UNSPECIFIED
+          - READ_REPLICAS_DISABLED
+          - READ_REPLICAS_ENABLED
         transitEncryptionMode:
           type: string
           enum:
-            - TRANSIT_ENCRYPTION_MODE_UNSPECIFIED
-            - SERVER_AUTHENTICATION
-            - DISABLED
+          - TRANSIT_ENCRYPTION_MODE_UNSPECIFIED
+          - SERVER_AUTHENTICATION
+          - DISABLED
     ListInstancesResponse:
       type: object
       properties:
@@ -408,21 +412,12 @@ components:
           type: array
           items:
             type: string
-    Operation:
-      type: object
-      properties:
-        name:
-          type: string
-        done:
-          type: boolean
-        metadata:
-          type: object
-        error:
-          type: object
-          properties:
-            code:
-              type: integer
-            message:
-              type: string
-        response:
-          type: object
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/cloud-platform: Full access to Cloud Platform
