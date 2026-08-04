@@ -1,0 +1,14 @@
+{
+  "provider": "google-cloud-memorystore",
+  "sources": [
+    "google-cloud-memorystore-instances-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-cloud-memorystore-instances-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

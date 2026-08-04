@@ -1,0 +1,1189 @@
+{
+  "info": {
+    "_postman_id": "9cbf6f22-ac62-406d-ad21-cd62e85e19f6",
+    "name": "Google Cloud Memorystore for Redis Instances API",
+    "description": "The Google Cloud Memorystore for Redis API provides programmatic management of fully managed Redis instances on Google Cloud. It enables creating, configuring, scaling, and monitoring Redis instances for use as in-memory data stores and caches, with support for high availability, automatic failover, and data persistence.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:47:53.000Z",
+    "updatedAt": "2026-07-28T01:47:54.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9cbf6f22-ac62-406d-ad21-cd62e85e19f6"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{project}",
+          "item": [
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "{location}",
+                  "item": [
+                    {
+                      "name": "instances",
+                      "item": [
+                        {
+                          "name": "{instance}",
+                          "item": [
+                            {
+                              "name": "Google Cloud Memorystore Get an instance",
+                              "id": "24fb9ccc-f142-4aa0-b31f-7bfb29837229",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "https://www.googleapis.com/auth/cloud-platform",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://oauth2.googleapis.com/token",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "authUrl",
+                                      "value": "https://accounts.google.com/o/oauth2/auth",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "authorization_code",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:project/locations/:location/instances/:instance",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":project",
+                                    "locations",
+                                    ":location",
+                                    "instances",
+                                    ":instance"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "7c846767-3754-490f-bfe2-76bffae15c93",
+                                      "key": "project",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "ae251dc3-af7e-4e5c-b6c7-d527de1a1084",
+                                      "key": "location",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "5c203034-08c1-4192-9044-a36e10edf5ab",
+                                      "key": "instance",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Gets the details of a specific Redis instance."
+                              },
+                              "response": [
+                                {
+                                  "id": "a2f55bce-99d7-40fc-891f-19ff859fce00",
+                                  "name": "Successful response",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:project/locations/:location/instances/:instance",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":project",
+                                        "locations",
+                                        ":location",
+                                        "instances",
+                                        ":instance"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "project"
+                                        },
+                                        {
+                                          "key": "location"
+                                        },
+                                        {
+                                          "key": "instance"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"labels\": {\n    \"consecteture\": \"<string>\",\n    \"mollit76\": \"<string>\",\n    \"labore_65\": \"<string>\",\n    \"id_8\": \"<string>\"\n  },\n  \"locationId\": \"<string>\",\n  \"alternativeLocationId\": \"<string>\",\n  \"redisVersion\": \"<string>\",\n  \"reservedIpRange\": \"<string>\",\n  \"host\": \"<string>\",\n  \"port\": \"<integer>\",\n  \"currentLocationId\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"state\": \"READY\",\n  \"statusMessage\": \"<string>\",\n  \"memorySizeGb\": \"<integer>\",\n  \"authorizedNetwork\": \"<string>\",\n  \"persistenceIamIdentity\": \"<string>\",\n  \"connectMode\": \"CONNECT_MODE_UNSPECIFIED\",\n  \"authEnabled\": \"<boolean>\",\n  \"tier\": \"STANDARD_HA\",\n  \"replicaCount\": \"<integer>\",\n  \"readReplicasMode\": \"READ_REPLICAS_ENABLED\",\n  \"transitEncryptionMode\": \"TRANSIT_ENCRYPTION_MODE_UNSPECIFIED\"\n}",
+                                  "createdAt": "2026-07-28T01:47:54.000Z",
+                                  "updatedAt": "2026-07-28T01:47:54.000Z",
+                                  "uid": "35240-a2f55bce-99d7-40fc-891f-19ff859fce00"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:47:54.000Z",
+                              "updatedAt": "2026-07-28T01:47:54.000Z",
+                              "uid": "35240-24fb9ccc-f142-4aa0-b31f-7bfb29837229"
+                            },
+                            {
+                              "name": "Google Cloud Memorystore Update an instance",
+                              "id": "71775023-fde5-4f25-a07e-bb7cdc25b1f3",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "https://www.googleapis.com/auth/cloud-platform",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://oauth2.googleapis.com/token",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "authUrl",
+                                      "value": "https://accounts.google.com/o/oauth2/auth",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "authorization_code",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"labels\": {\n    \"consecteture\": \"<string>\",\n    \"mollit76\": \"<string>\",\n    \"labore_65\": \"<string>\",\n    \"id_8\": \"<string>\"\n  },\n  \"locationId\": \"<string>\",\n  \"alternativeLocationId\": \"<string>\",\n  \"redisVersion\": \"<string>\",\n  \"reservedIpRange\": \"<string>\",\n  \"host\": \"<string>\",\n  \"port\": \"<integer>\",\n  \"currentLocationId\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"state\": \"READY\",\n  \"statusMessage\": \"<string>\",\n  \"memorySizeGb\": \"<integer>\",\n  \"authorizedNetwork\": \"<string>\",\n  \"persistenceIamIdentity\": \"<string>\",\n  \"connectMode\": \"CONNECT_MODE_UNSPECIFIED\",\n  \"authEnabled\": \"<boolean>\",\n  \"tier\": \"STANDARD_HA\",\n  \"replicaCount\": \"<integer>\",\n  \"readReplicasMode\": \"READ_REPLICAS_ENABLED\",\n  \"transitEncryptionMode\": \"TRANSIT_ENCRYPTION_MODE_UNSPECIFIED\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:project/locations/:location/instances/:instance?updateMask=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":project",
+                                    "locations",
+                                    ":location",
+                                    "instances",
+                                    ":instance"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "(Required) Fields to update.",
+                                      "key": "updateMask",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "24280c1e-9c9b-420f-87b6-261a70e5fabe",
+                                      "key": "project",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "629cff6d-3e91-475b-afa5-48a181bde468",
+                                      "key": "location",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "b11874f9-4800-495f-ac07-a2c10b45a236",
+                                      "key": "instance",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Updates the metadata and configuration of a specific Redis instance."
+                              },
+                              "response": [
+                                {
+                                  "id": "dd6153f9-bf3a-4c19-a624-cc3d58fec58e",
+                                  "name": "Instance update initiated",
+                                  "originalRequest": {
+                                    "method": "PATCH",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"labels\": {\n    \"consecteture\": \"<string>\",\n    \"mollit76\": \"<string>\",\n    \"labore_65\": \"<string>\",\n    \"id_8\": \"<string>\"\n  },\n  \"locationId\": \"<string>\",\n  \"alternativeLocationId\": \"<string>\",\n  \"redisVersion\": \"<string>\",\n  \"reservedIpRange\": \"<string>\",\n  \"host\": \"<string>\",\n  \"port\": \"<integer>\",\n  \"currentLocationId\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"state\": \"READY\",\n  \"statusMessage\": \"<string>\",\n  \"memorySizeGb\": \"<integer>\",\n  \"authorizedNetwork\": \"<string>\",\n  \"persistenceIamIdentity\": \"<string>\",\n  \"connectMode\": \"CONNECT_MODE_UNSPECIFIED\",\n  \"authEnabled\": \"<boolean>\",\n  \"tier\": \"STANDARD_HA\",\n  \"replicaCount\": \"<integer>\",\n  \"readReplicasMode\": \"READ_REPLICAS_ENABLED\",\n  \"transitEncryptionMode\": \"TRANSIT_ENCRYPTION_MODE_UNSPECIFIED\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:project/locations/:location/instances/:instance?updateMask=<string>",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":project",
+                                        "locations",
+                                        ":location",
+                                        "instances",
+                                        ":instance"
+                                      ],
+                                      "query": [
+                                        {
+                                          "description": "(Required) Fields to update.",
+                                          "key": "updateMask",
+                                          "value": "<string>"
+                                        }
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "project"
+                                        },
+                                        {
+                                          "key": "location"
+                                        },
+                                        {
+                                          "key": "instance"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"name\": \"<string>\",\n  \"done\": \"<boolean>\",\n  \"metadata\": {},\n  \"error\": {\n    \"code\": \"<integer>\",\n    \"message\": \"<string>\"\n  },\n  \"response\": {}\n}",
+                                  "createdAt": "2026-07-28T01:47:54.000Z",
+                                  "updatedAt": "2026-07-28T01:47:54.000Z",
+                                  "uid": "35240-dd6153f9-bf3a-4c19-a624-cc3d58fec58e"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:47:54.000Z",
+                              "updatedAt": "2026-07-28T01:47:54.000Z",
+                              "uid": "35240-71775023-fde5-4f25-a07e-bb7cdc25b1f3"
+                            },
+                            {
+                              "name": "Google Cloud Memorystore Delete an instance",
+                              "id": "ad374d7e-f493-47b5-8131-03a1ea77adbe",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "https://www.googleapis.com/auth/cloud-platform",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://oauth2.googleapis.com/token",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "authUrl",
+                                      "value": "https://accounts.google.com/o/oauth2/auth",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "authorization_code",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:project/locations/:location/instances/:instance",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":project",
+                                    "locations",
+                                    ":location",
+                                    "instances",
+                                    ":instance"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "d05d7fff-d932-4c25-ba82-518176385705",
+                                      "key": "project",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "b08551a1-96b1-4c2a-b649-f035f1d7d736",
+                                      "key": "location",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "b1be1c23-080d-440b-8972-945bae7aace4",
+                                      "key": "instance",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Deletes a specific Redis instance. Instance stops serving and data is deleted."
+                              },
+                              "response": [
+                                {
+                                  "id": "fe7e52b8-5683-4691-b7e0-9949c81394e5",
+                                  "name": "Instance deletion initiated",
+                                  "originalRequest": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:project/locations/:location/instances/:instance",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":project",
+                                        "locations",
+                                        ":location",
+                                        "instances",
+                                        ":instance"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "project"
+                                        },
+                                        {
+                                          "key": "location"
+                                        },
+                                        {
+                                          "key": "instance"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"name\": \"<string>\",\n  \"done\": \"<boolean>\",\n  \"metadata\": {},\n  \"error\": {\n    \"code\": \"<integer>\",\n    \"message\": \"<string>\"\n  },\n  \"response\": {}\n}",
+                                  "createdAt": "2026-07-28T01:47:54.000Z",
+                                  "updatedAt": "2026-07-28T01:47:54.000Z",
+                                  "uid": "35240-fe7e52b8-5683-4691-b7e0-9949c81394e5"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:47:54.000Z",
+                              "updatedAt": "2026-07-28T01:47:54.000Z",
+                              "uid": "35240-ad374d7e-f493-47b5-8131-03a1ea77adbe"
+                            }
+                          ],
+                          "id": "81d9a7f2-6acc-45c8-870b-3fe8430202a9",
+                          "createdAt": "2026-07-28T01:47:54.000Z",
+                          "updatedAt": "2026-07-28T01:47:54.000Z",
+                          "uid": "35240-81d9a7f2-6acc-45c8-870b-3fe8430202a9"
+                        },
+                        {
+                          "name": "{instance}:upgrade",
+                          "item": [
+                            {
+                              "name": "Google Cloud Memorystore Upgrade an instance",
+                              "id": "d6be0db2-2621-43e8-b70d-fe096aee6045",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "https://www.googleapis.com/auth/cloud-platform",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://oauth2.googleapis.com/token",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "authUrl",
+                                      "value": "https://accounts.google.com/o/oauth2/auth",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "authorization_code",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"redisVersion\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:project/locations/:location/instances/{{instance}}:upgrade",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":project",
+                                    "locations",
+                                    ":location",
+                                    "instances",
+                                    "{{instance}}:upgrade"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "e3042f48-f38a-4c93-be61-20a4df028ef1",
+                                      "key": "project",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "fd46a504-d979-44d6-85d3-3d2be401f922",
+                                      "key": "location",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Upgrades the Redis instance to a newer Redis version."
+                              },
+                              "response": [
+                                {
+                                  "id": "b78374ff-c5ca-4bb9-b3cd-027bffe1427f",
+                                  "name": "Instance upgrade initiated",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"redisVersion\": \"<string>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:project/locations/:location/instances/{{instance}}:upgrade",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":project",
+                                        "locations",
+                                        ":location",
+                                        "instances",
+                                        "{{instance}}:upgrade"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "project"
+                                        },
+                                        {
+                                          "key": "location"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"name\": \"<string>\",\n  \"done\": \"<boolean>\",\n  \"metadata\": {},\n  \"error\": {\n    \"code\": \"<integer>\",\n    \"message\": \"<string>\"\n  },\n  \"response\": {}\n}",
+                                  "createdAt": "2026-07-28T01:47:54.000Z",
+                                  "updatedAt": "2026-07-28T01:47:54.000Z",
+                                  "uid": "35240-b78374ff-c5ca-4bb9-b3cd-027bffe1427f"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:47:54.000Z",
+                              "updatedAt": "2026-07-28T01:47:54.000Z",
+                              "uid": "35240-d6be0db2-2621-43e8-b70d-fe096aee6045"
+                            }
+                          ],
+                          "id": "e81acd03-b1b7-44e7-adcb-1c31fc402feb",
+                          "createdAt": "2026-07-28T01:47:54.000Z",
+                          "updatedAt": "2026-07-28T01:47:54.000Z",
+                          "uid": "35240-e81acd03-b1b7-44e7-adcb-1c31fc402feb"
+                        },
+                        {
+                          "name": "{instance}:failover",
+                          "item": [
+                            {
+                              "name": "Google Cloud Memorystore Failover an instance",
+                              "id": "66ff1012-b994-4404-ad50-fcfd2173f038",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "https://www.googleapis.com/auth/cloud-platform",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "https://oauth2.googleapis.com/token",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "authUrl",
+                                      "value": "https://accounts.google.com/o/oauth2/auth",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "authorization_code",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"dataProtectionMode\": \"FORCE_DATA_LOSS\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:project/locations/:location/instances/{{instance}}:failover",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":project",
+                                    "locations",
+                                    ":location",
+                                    "instances",
+                                    "{{instance}}:failover"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "7c4f47a2-a7e2-4b5a-92b6-e3dfc674bb78",
+                                      "key": "project",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "8e20a5af-28c9-4116-a163-ae0b0e637936",
+                                      "key": "location",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Initiates a failover of the primary node to current replica node for a specific STANDARD tier Cloud Memorystore for Redis instance."
+                              },
+                              "response": [
+                                {
+                                  "id": "4423d6dd-3c34-4537-a396-035d68e99f70",
+                                  "name": "Failover initiated",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"dataProtectionMode\": \"FORCE_DATA_LOSS\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:project/locations/:location/instances/{{instance}}:failover",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":project",
+                                        "locations",
+                                        ":location",
+                                        "instances",
+                                        "{{instance}}:failover"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "project"
+                                        },
+                                        {
+                                          "key": "location"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"name\": \"<string>\",\n  \"done\": \"<boolean>\",\n  \"metadata\": {},\n  \"error\": {\n    \"code\": \"<integer>\",\n    \"message\": \"<string>\"\n  },\n  \"response\": {}\n}",
+                                  "createdAt": "2026-07-28T01:47:54.000Z",
+                                  "updatedAt": "2026-07-28T01:47:54.000Z",
+                                  "uid": "35240-4423d6dd-3c34-4537-a396-035d68e99f70"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:47:54.000Z",
+                              "updatedAt": "2026-07-28T01:47:54.000Z",
+                              "uid": "35240-66ff1012-b994-4404-ad50-fcfd2173f038"
+                            }
+                          ],
+                          "id": "3e4a2ce3-25d4-4d31-b041-3158911eaff6",
+                          "createdAt": "2026-07-28T01:47:54.000Z",
+                          "updatedAt": "2026-07-28T01:47:54.000Z",
+                          "uid": "35240-3e4a2ce3-25d4-4d31-b041-3158911eaff6"
+                        },
+                        {
+                          "name": "Google Cloud Memorystore List instances",
+                          "id": "7301b1a6-4341-474a-9e32-2bd80a43f6d2",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "https://www.googleapis.com/auth/cloud-platform",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://oauth2.googleapis.com/token",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "authUrl",
+                                  "value": "https://accounts.google.com/o/oauth2/auth",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "authorization_code",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:project/locations/:location/instances?pageSize=<integer>&pageToken=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":project",
+                                "locations",
+                                ":location",
+                                "instances"
+                              ],
+                              "query": [
+                                {
+                                  "key": "pageSize",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "key": "pageToken",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "ece4a932-ab66-4690-9ee1-92888fd5a0d3",
+                                  "key": "project",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "9771ab3b-4fb3-4b1c-a267-ee183705c1a5",
+                                  "key": "location",
+                                  "value": "<string>",
+                                  "description": "(Required) Use '-' for all locations."
+                                }
+                              ]
+                            },
+                            "description": "Lists all Redis instances owned by a project in either the specified location or all locations."
+                          },
+                          "response": [
+                            {
+                              "id": "9b584230-843d-43e3-827f-4a72319171f4",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:project/locations/:location/instances?pageSize=<integer>&pageToken=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":project",
+                                    "locations",
+                                    ":location",
+                                    "instances"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "pageSize",
+                                      "value": "<integer>"
+                                    },
+                                    {
+                                      "key": "pageToken",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "project"
+                                    },
+                                    {
+                                      "key": "location"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"instances\": [\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"labels\": {\n        \"occaecata\": \"<string>\"\n      },\n      \"locationId\": \"<string>\",\n      \"alternativeLocationId\": \"<string>\",\n      \"redisVersion\": \"<string>\",\n      \"reservedIpRange\": \"<string>\",\n      \"host\": \"<string>\",\n      \"port\": \"<integer>\",\n      \"currentLocationId\": \"<string>\",\n      \"createTime\": \"<dateTime>\",\n      \"state\": \"UPDATING\",\n      \"statusMessage\": \"<string>\",\n      \"memorySizeGb\": \"<integer>\",\n      \"authorizedNetwork\": \"<string>\",\n      \"persistenceIamIdentity\": \"<string>\",\n      \"connectMode\": \"CONNECT_MODE_UNSPECIFIED\",\n      \"authEnabled\": \"<boolean>\",\n      \"tier\": \"TIER_UNSPECIFIED\",\n      \"replicaCount\": \"<integer>\",\n      \"readReplicasMode\": \"READ_REPLICAS_DISABLED\",\n      \"transitEncryptionMode\": \"DISABLED\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"labels\": {\n        \"proident84b\": \"<string>\",\n        \"ea_d1\": \"<string>\"\n      },\n      \"locationId\": \"<string>\",\n      \"alternativeLocationId\": \"<string>\",\n      \"redisVersion\": \"<string>\",\n      \"reservedIpRange\": \"<string>\",\n      \"host\": \"<string>\",\n      \"port\": \"<integer>\",\n      \"currentLocationId\": \"<string>\",\n      \"createTime\": \"<dateTime>\",\n      \"state\": \"FAILING_OVER\",\n      \"statusMessage\": \"<string>\",\n      \"memorySizeGb\": \"<integer>\",\n      \"authorizedNetwork\": \"<string>\",\n      \"persistenceIamIdentity\": \"<string>\",\n      \"connectMode\": \"CONNECT_MODE_UNSPECIFIED\",\n      \"authEnabled\": \"<boolean>\",\n      \"tier\": \"STANDARD_HA\",\n      \"replicaCount\": \"<integer>\",\n      \"readReplicasMode\": \"READ_REPLICAS_ENABLED\",\n      \"transitEncryptionMode\": \"DISABLED\"\n    }\n  ],\n  \"nextPageToken\": \"<string>\",\n  \"unreachable\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "createdAt": "2026-07-28T01:47:54.000Z",
+                              "updatedAt": "2026-07-28T01:47:54.000Z",
+                              "uid": "35240-9b584230-843d-43e3-827f-4a72319171f4"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:47:54.000Z",
+                          "updatedAt": "2026-07-28T01:47:54.000Z",
+                          "uid": "35240-7301b1a6-4341-474a-9e32-2bd80a43f6d2"
+                        },
+                        {
+                          "name": "Google Cloud Memorystore Create an instance",
+                          "id": "eb71a0f3-3a9a-494c-850d-588b0f0b70a8",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "https://www.googleapis.com/auth/cloud-platform",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "https://oauth2.googleapis.com/token",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "authUrl",
+                                  "value": "https://accounts.google.com/o/oauth2/auth",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "authorization_code",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"labels\": {\n    \"consecteture\": \"<string>\",\n    \"mollit76\": \"<string>\",\n    \"labore_65\": \"<string>\",\n    \"id_8\": \"<string>\"\n  },\n  \"locationId\": \"<string>\",\n  \"alternativeLocationId\": \"<string>\",\n  \"redisVersion\": \"<string>\",\n  \"reservedIpRange\": \"<string>\",\n  \"host\": \"<string>\",\n  \"port\": \"<integer>\",\n  \"currentLocationId\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"state\": \"READY\",\n  \"statusMessage\": \"<string>\",\n  \"memorySizeGb\": \"<integer>\",\n  \"authorizedNetwork\": \"<string>\",\n  \"persistenceIamIdentity\": \"<string>\",\n  \"connectMode\": \"CONNECT_MODE_UNSPECIFIED\",\n  \"authEnabled\": \"<boolean>\",\n  \"tier\": \"STANDARD_HA\",\n  \"replicaCount\": \"<integer>\",\n  \"readReplicasMode\": \"READ_REPLICAS_ENABLED\",\n  \"transitEncryptionMode\": \"TRANSIT_ENCRYPTION_MODE_UNSPECIFIED\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:project/locations/:location/instances?instanceId=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":project",
+                                "locations",
+                                ":location",
+                                "instances"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) The logical name of the Redis instance.",
+                                  "key": "instanceId",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "f2d764b7-d273-4e6a-8059-815a7e6d28d2",
+                                  "key": "project",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "55e070b5-f6c7-472f-a36e-bb18a728e67c",
+                                  "key": "location",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Creates a Redis instance based on the specified tier and memory size."
+                          },
+                          "response": [
+                            {
+                              "id": "43433c44-15cf-4c51-b7d6-4cefc0561a53",
+                              "name": "Instance creation initiated",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"labels\": {\n    \"consecteture\": \"<string>\",\n    \"mollit76\": \"<string>\",\n    \"labore_65\": \"<string>\",\n    \"id_8\": \"<string>\"\n  },\n  \"locationId\": \"<string>\",\n  \"alternativeLocationId\": \"<string>\",\n  \"redisVersion\": \"<string>\",\n  \"reservedIpRange\": \"<string>\",\n  \"host\": \"<string>\",\n  \"port\": \"<integer>\",\n  \"currentLocationId\": \"<string>\",\n  \"createTime\": \"<dateTime>\",\n  \"state\": \"READY\",\n  \"statusMessage\": \"<string>\",\n  \"memorySizeGb\": \"<integer>\",\n  \"authorizedNetwork\": \"<string>\",\n  \"persistenceIamIdentity\": \"<string>\",\n  \"connectMode\": \"CONNECT_MODE_UNSPECIFIED\",\n  \"authEnabled\": \"<boolean>\",\n  \"tier\": \"STANDARD_HA\",\n  \"replicaCount\": \"<integer>\",\n  \"readReplicasMode\": \"READ_REPLICAS_ENABLED\",\n  \"transitEncryptionMode\": \"TRANSIT_ENCRYPTION_MODE_UNSPECIFIED\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:project/locations/:location/instances?instanceId=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":project",
+                                    "locations",
+                                    ":location",
+                                    "instances"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "(Required) The logical name of the Redis instance.",
+                                      "key": "instanceId",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "project"
+                                    },
+                                    {
+                                      "key": "location"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"name\": \"<string>\",\n  \"done\": \"<boolean>\",\n  \"metadata\": {},\n  \"error\": {\n    \"code\": \"<integer>\",\n    \"message\": \"<string>\"\n  },\n  \"response\": {}\n}",
+                              "createdAt": "2026-07-28T01:47:54.000Z",
+                              "updatedAt": "2026-07-28T01:47:54.000Z",
+                              "uid": "35240-43433c44-15cf-4c51-b7d6-4cefc0561a53"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:47:54.000Z",
+                          "updatedAt": "2026-07-28T01:47:54.000Z",
+                          "uid": "35240-eb71a0f3-3a9a-494c-850d-588b0f0b70a8"
+                        }
+                      ],
+                      "id": "3bf58d37-6101-4fbb-8d63-7aa16cdd7dca",
+                      "createdAt": "2026-07-28T01:47:54.000Z",
+                      "updatedAt": "2026-07-28T01:47:54.000Z",
+                      "uid": "35240-3bf58d37-6101-4fbb-8d63-7aa16cdd7dca"
+                    }
+                  ],
+                  "id": "a5d3948b-ad6a-4999-b9ff-a535b95452f0",
+                  "createdAt": "2026-07-28T01:47:54.000Z",
+                  "updatedAt": "2026-07-28T01:47:54.000Z",
+                  "uid": "35240-a5d3948b-ad6a-4999-b9ff-a535b95452f0"
+                }
+              ],
+              "id": "0b34b4e8-44e0-4e64-bed3-426730c9b7d7",
+              "createdAt": "2026-07-28T01:47:54.000Z",
+              "updatedAt": "2026-07-28T01:47:54.000Z",
+              "uid": "35240-0b34b4e8-44e0-4e64-bed3-426730c9b7d7"
+            }
+          ],
+          "id": "72df83b3-3c92-4346-a8fa-b59636e5fa29",
+          "createdAt": "2026-07-28T01:47:54.000Z",
+          "updatedAt": "2026-07-28T01:47:54.000Z",
+          "uid": "35240-72df83b3-3c92-4346-a8fa-b59636e5fa29"
+        }
+      ],
+      "id": "4ed2cb59-0dcf-4c21-b34e-2722f0fac2cf",
+      "createdAt": "2026-07-28T01:47:54.000Z",
+      "updatedAt": "2026-07-28T01:47:54.000Z",
+      "uid": "35240-4ed2cb59-0dcf-4c21-b34e-2722f0fac2cf"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://redis.googleapis.com/v1"
+    },
+    {
+      "key": "instance",
+      "value": "<string>"
+    }
+  ]
+}
