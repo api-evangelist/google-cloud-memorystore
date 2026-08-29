@@ -5,6 +5,18 @@ description: >-
   scalable, secure, and highly available caching layer that helps accelerate application performance. Memorystore
   automates complex tasks like provisioning, replication, failover, and patching, enabling developers to focus on
   building applications without managing infrastructure.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
