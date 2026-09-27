@@ -294,6 +294,19 @@ paths:
         - https://www.googleapis.com/auth/cloud-platform
 components:
   schemas:
+    ListInstancesResponse:
+      type: object
+      properties:
+        instances:
+          type: array
+          items:
+            $ref: '#/components/schemas/Instance'
+        nextPageToken:
+          type: string
+        unreachable:
+          type: array
+          items:
+            type: string
     Instance:
       type: object
       properties:
@@ -381,19 +394,6 @@ components:
           - TRANSIT_ENCRYPTION_MODE_UNSPECIFIED
           - SERVER_AUTHENTICATION
           - DISABLED
-    ListInstancesResponse:
-      type: object
-      properties:
-        instances:
-          type: array
-          items:
-            $ref: '#/components/schemas/Instance'
-        nextPageToken:
-          type: string
-        unreachable:
-          type: array
-          items:
-            type: string
     Operation:
       type: object
       properties:
