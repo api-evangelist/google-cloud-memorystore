@@ -62,6 +62,9 @@ apis:
   - type: JSONSchema
     url: json-schema/instance-schema.json
 common:
+  - type: CapabilityMap
+    url: capabilities/google-cloud-memorystore-capability-edges.yml
+    name: Google Cloud Memorystore Business Capability Map
   - type: Website
     url: https://www.google.com/
   - type: PostmanWorkspace

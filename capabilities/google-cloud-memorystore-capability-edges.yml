@@ -1,0 +1,26 @@
+slug: google-cloud-memorystore
+provider: Google Cloud Memorystore
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Instances
+  spec_file: google-cloud-memorystore-instances-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.82
+  evidence: '"programmatic management of fully managed Redis instances on Google Cloud"; operations "Create
+    an instance", "Upgrade an instance", "Failover an instance"'
+  reason: CRUD plus upgrade/failover over managed in-memory data store instances is provisioning and stewardship
+    of cloud infrastructure components, i.e. IT Infrastructure Management. Not a data-governance or business
+    capability.
