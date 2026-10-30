@@ -1,4 +1,4 @@
-# Google Cloud Memorystore (google-cloud-memorystore)
+# Google Cloud Memorystore
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,67 +66,149 @@
 
 Google Cloud Memorystore is a fully managed in-memory data store service for Redis and Memcached. It provides a scalable, secure, and highly available caching layer that helps accelerate application performance. Memorystore automates complex tasks like provisioning, replication, failover, and patching, enabling developers to focus on building applications without managing infrastructure.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/google-cloud-memorystore/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/google-cloud-memorystore/refs/heads/main/apis.yml)
+**Areas:** Cache · Google Cloud · In-Memory · Memcached · Redis
 
-## Scope
+## Google Cloud Memorystore on APIs.io
 
-- **Type:** Index
+Everything profiled for Google Cloud Memorystore is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/google-cloud-memorystore/](https://apis.io/providers/google-cloud-memorystore/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (1)
 
-- Cache
-- Google Cloud
-- In-Memory
-- Memcached
-- Redis
+- [Google Cloud Memorystore Instances API](https://apis.io/apis/google-cloud-memorystore/google-cloud-memorystore-instances-api/) — Operations on Memorystore Redis instances
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-13
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Memorystore for Redis API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Memorystore for Redis API enables programmatic management of fully managed Redis instances on Google Cloud. It supports creating, updating, deleting, and scaling Redis instances, configuring high availability with automatic failover, managing data persistence, and performing version upgrades. The API provides operations for both basic single-node and standard high-availability configurations.
+- [Google Cloud Memorystore Agentic Access](https://apis.io/agentic-access/google-cloud-memorystore/google-cloud-memorystore-agentic-access/)
 
-- **Human URL:** [https://cloud.google.com/memorystore/docs/redis](https://cloud.google.com/memorystore/docs/redis)
-- **Base URL:** `https://redis.googleapis.com/v1`
+#### JSON Schema (1)
 
-#### Tags
+The data models the API reads and writes.
 
-- Cache
-- In-Memory
-- Instances
-- Redis
+- [Google Cloud Memorystore for Redis Instance](https://apis.io/schemas/google-cloud-memorystore/instance/)
 
-#### Properties
+#### JSON-LD (1)
 
-- [Documentation](https://cloud.google.com/memorystore/docs/redis/reference/rest)
-- [OpenAPI](openapi/cloud-memorystore-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/cloud-memorystore.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/cloud-memorystore.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Authentication](https://cloud.google.com/memorystore/docs/redis/auth-overview)
-- [Getting Started](https://cloud.google.com/memorystore/docs/redis/quickstart)
-- [JSON Schema](json-schema/instance-schema.json) — [JSON Schema](https://json-schema.org/specification)
+Linked-data contexts for the provider's vocabulary.
 
-## Common Properties
+- [Google Cloud Memorystore Context](https://apis.io/jsonld/google-cloud-memorystore/google-cloud-memorystore-context/)
 
-- [GitHub Organization](https://github.com/GoogleCloudPlatform)
-- [Portal](https://cloud.google.com/memorystore)
-- [Getting Started](https://cloud.google.com/memorystore/docs/redis/quickstart)
+#### Collections (3)
+
+Postman and Open Collection request collections.
+
+- [Google Cloud Memorystore for Redis API](https://apis.io/collections/google-cloud-memorystore/open-cloud-memorystore/)
+- [Google Cloud Memorystore for Redis Instances API](https://apis.io/collections/google-cloud-memorystore/open-google-cloud-memorystore-instances-api/)
+- [Google Cloud Memorystore for Redis Instances API](https://apis.io/collections/google-cloud-memorystore/postman-google-cloud-memorystore-instances-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Google Cloud Memorystore — jsonschema rules](https://apis.io/rules/google-cloud-memorystore/google-cloud-memorystore-jsonschema-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Google Cloud Memorystore Authentication](https://apis.io/security/google-cloud-memorystore/google-cloud-memorystore-authentication/)
+- [Google Cloud Memorystore Domain Security](https://apis.io/security/google-cloud-memorystore/google-cloud-memorystore-domain-security/)
+- [Google Cloud Memorystore Vulnerability Disclosure](https://apis.io/security/google-cloud-memorystore/google-cloud-memorystore-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Google Cloud Memorystore Scopes](https://apis.io/scopes/google-cloud-memorystore/google-cloud-memorystore-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Google Cloud Memorystore Plans Pricing](https://apis.io/plans/google-cloud-memorystore/google-cloud-memorystore-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Google Cloud Memorystore Rate Limits](https://apis.io/rate-limits/google-cloud-memorystore/google-cloud-memorystore-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Google Cloud Memorystore Finops](https://apis.io/finops/google-cloud-memorystore/google-cloud-memorystore-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.google.com/)
 - [Documentation](https://cloud.google.com/memorystore/docs/redis)
-- [Authentication](https://cloud.google.com/memorystore/docs/redis/auth-overview)
+- [Getting started](https://cloud.google.com/memorystore/docs/redis/quickstart)
 - [Pricing](https://cloud.google.com/memorystore/docs/redis/pricing)
-- [Terms of Service](https://cloud.google.com/terms)
-- [Privacy Policy](https://policies.google.com/privacy)
-- [Status Page](https://status.cloud.google.com/)
 - [Support](https://cloud.google.com/memorystore/docs/redis/support)
-- [JSON-LD](json-ld/google-cloud-memorystore-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Integrations](https://cloud.google.com/marketplace)
+- [Terms of service](https://cloud.google.com/terms)
+- [Privacy policy](https://policies.google.com/privacy)
+- [GitHub](https://github.com/GoogleCloudPlatform)
+- [Status](https://status.cloud.google.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 45.4** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 58.1 |
+| Contract governance | 9.8 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 36.9 |
+| Access clarity | 39.5 |
+
+**Agent readiness 24.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 40.2** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/google-cloud-memorystore/](https://apis.io/providers/google-cloud-memorystore/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Google Cloud Memorystore: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/google-cloud-memorystore/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
